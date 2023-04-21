@@ -63,7 +63,11 @@ Google Auth : https://firebase.google.com/docs/auth/android/google-signin?hl=en&
 
 ### Icons provided by icons8.com
 <a target="_blank" href="https://icons8.com/icon/Tn1voGNhzHsN/raspberry-pi-zero">Raspberry Pi Zero</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
 <a target="_blank" href="https://icons8.com/icon/62856/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
 <a target="_blank" href="https://icons8.com/icon/rl0sIZNchpNB/cyber-security">Cyber Security</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
 <a target="_blank" href="https://icons8.com/icon/112272/stellar">Stellar</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
 <a target="_blank" href="https://icons8.com/icon/YYSGl-eTrZm8/cloud-firewall">Cloud Firewall</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
