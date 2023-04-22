@@ -6,7 +6,9 @@ Name: Gowriswarup Kailas Perumal
 
 ## Overview.
 
-A mobile app (Kotlin) which works as a user interface for the Spyder project for carrying out tasks and notifying user. 
+A mobile app (Kotlin) which works as a user interface for the Spyder project for carrying out tasks on the Raspberry Pi component and notifying user.
+
+Please checkout the component Spyder-rpi repo [here](https://github.com/gowriswarupk/spyder-rpi) for the complete project file.
 
 
 ### Features.
