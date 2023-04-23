@@ -2,6 +2,7 @@ package com.technologkal.spyderApp.ui.activity.host
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -18,6 +19,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.messaging.FirebaseMessaging
@@ -27,6 +30,8 @@ import com.technologkal.spyderApp.utils.MyApplication
 import com.technologkal.spyderApp.utils.Prefs
 import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.R
 import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.databinding.DrawerHeaderLayoutBinding
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
 
 
 class HostActivity : AppCompatActivity() {
@@ -38,13 +43,15 @@ class HostActivity : AppCompatActivity() {
     private lateinit var toolbar: Toolbar
     private lateinit var navView: NavigationView
     private lateinit var navViewBinding: DrawerHeaderLayoutBinding
+    private lateinit var database: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_host)
         toolbar = findViewById(R.id.customToolbar)
         setSupportActionBar(toolbar)
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true)
+        database = FirebaseDatabase.getInstance().reference
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -153,27 +160,51 @@ class HostActivity : AppCompatActivity() {
 
     fun onButton1Click(view: View?) {
         showToast("Running Device Scans...")
+        toggleDatabaseValue("button1")
     }
 
     fun onButton2Click(view: View?) {
         showToast("Running Port Scans...")
+        toggleDatabaseValue("button2")
     }
 
     fun onButton3Click(view: View?) {
         showToast("Running Security Analysis...")
+        toggleDatabaseValue("button3")
     }
 
     fun onButton4Click(view: View?) {
         showToast("Honeypot Status Changed!")
+        toggleDatabaseValue("button4")
     }
 
-//    fun onButton5Click(view: View?) {
-//        showToast("Button 5 clicked")
-//    }
+    fun onButton5Click(view: View?) {
+        showToast("Opening Log History in console window!")
+        val consoleLogsUrl = "https://console.cloud.google.com/logs/viewer"
+        val logViewIntent = Intent(Intent.ACTION_VIEW, Uri.parse(consoleLogsUrl))
+        startActivity(logViewIntent)
+    }
+
+
+    val firebaseConsoleUrl = "https://console.firebase.google.com/"
 
     fun onButton6Click(view: View?) {
         showToast("Opening Google Cloud Console...")
-    }
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(firebaseConsoleUrl))
+        startActivity(browserIntent)    }
 
+    private fun toggleDatabaseValue(buttonKey: String) {
+        val buttonRef = database.child(buttonKey)
+        buttonRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val currentValue = dataSnapshot.getValue(Boolean::class.java) ?: false
+                buttonRef.setValue(!currentValue)
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.w(TAG, "toggleDatabaseValue:onCancelled", databaseError.toException())
+            }
+        })
+    }
 
 }

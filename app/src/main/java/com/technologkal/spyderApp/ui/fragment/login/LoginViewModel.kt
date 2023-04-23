@@ -78,7 +78,6 @@ class LoginViewModel : ViewModel() {
             MyApplication.currentUser = userInfo
             MyApplication.currentUser!!.active = true
             FirestoreUtil.updateUser(MyApplication.currentUser!!) {
-
             }
             onFinishLoading()
             startHomeNavigation()

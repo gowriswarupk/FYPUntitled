@@ -67,7 +67,11 @@
         android:id="@+id/signUpFragment"
         android:name="com.technologkal.spyderApp.ui.fragment.signUp.SignUpFragment"
         android:label="SignUpFragment"
-        tools:layout="@layout/fragment_sign_up" />
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_scriptsFragment"
+            app:destination="@id/scriptsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/scriptsFragment"
         android:name="com.technologkal.spyderApp.ui.fragment.home.HomeFragment"

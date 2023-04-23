@@ -7,6 +7,7 @@ import androidx.lifecycle.*
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.technologkal.spyderApp.model.UserModel
 
 
@@ -49,18 +50,12 @@ class MyApplication : MultiDexApplication(), DefaultLifecycleObserver {
     }
 }
 
-/**
- * If you are using Android Architecture Components you can use the ProcessLifecycleOwner
- * and LifecycleObserver like so (set this class to the app name in the manifest)
- * // <application
-//   android:name=".ArchLifecycleApp"
-//    ....
- */
 class ArchLifecycleApp : Application(), LifecycleObserver {
 
     override fun onCreate() {
         super.onCreate()
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true)
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
