@@ -28,7 +28,12 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         // Create an Intent for the activity you want to open when the user taps the notification.
         val intent = Intent(this, HostActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        val pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent, PendingIntent.FLAG_ONE_SHOT)
+        val pendingIntent = PendingIntent.getActivity(
+            this,
+            0 /* Request code */,
+            intent,
+            PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_IMMUTABLE
+        )
 
         // Create the notification.
         val channelId = getString(R.string.default_notification_channel_id)

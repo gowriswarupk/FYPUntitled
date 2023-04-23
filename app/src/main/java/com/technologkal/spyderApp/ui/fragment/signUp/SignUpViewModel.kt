@@ -7,6 +7,7 @@ import android.util.Patterns
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -84,7 +85,6 @@ class SignUpViewModel(private val myApplication: Application) : AndroidViewModel
                     it.printStackTrace()
                     _signUpError.value = it.message
                     _buttonEnabled.value = true
-
                 }
             }
         }
@@ -149,6 +149,7 @@ class SignUpViewModel(private val myApplication: Application) : AndroidViewModel
                 _signUpError.value = it.message
                 _buttonEnabled.value = true
             }
+
     }
 
     fun doneNavigating() {
