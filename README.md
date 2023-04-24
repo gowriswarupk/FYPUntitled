@@ -67,7 +67,7 @@ Google Auth : https://firebase.google.com/docs/auth/android/google-signin?hl=en&
 
 #### Auth, Login, Signup Pages
 
-<img width="335" alt="AuthPage" src="https://user-images.githubusercontent.com/58232821/233780884-98a92952-5108-45b9-8355-a52c85674c6c.png"><img width="335" alt="Login" src="https://user-images.githubusercontent.com/58232821/233780895-01fd4636-5ad1-45bd-a77b-f79766cc839f.png"><img width="335" alt="SignUp" src="https://user-images.githubusercontent.com/58232821/233780896-3a28b7dc-ce9a-4c19-84af-8e7afbc3df3b.png">
+<img width="335" alt="AuthPage" src="https://user-images.githubusercontent.com/58232821/233877148-9a2f6829-0749-485a-9712-69e1ab54c325.png"><img width="335" alt="Login" src="https://user-images.githubusercontent.com/58232821/233780895-01fd4636-5ad1-45bd-a77b-f79766cc839f.png"><img width="335" alt="SignUp" src="https://user-images.githubusercontent.com/58232821/233780896-3a28b7dc-ce9a-4c19-84af-8e7afbc3df3b.png">
 
 #### Home Page
 
