@@ -24,24 +24,24 @@ class MyApplication : MultiDexApplication(), DefaultLifecycleObserver {
     }
 
     override fun onStop(owner: LifecycleOwner) {
-        val mAuth: FirebaseAuth? = FirebaseAuth.getInstance()
+        val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
         if (mAuth?.currentUser != null && currentUser != null) {
             currentUser!!.active = false
             FirestoreUtil.updateUser(currentUser!!) {}
         }
-        Log.d("Awww", "App in background")
+        Log.d("bg", "App in background")
     }
 
     override fun onStart(owner: LifecycleOwner) {
-        val mAuth: FirebaseAuth? = FirebaseAuth.getInstance()
+        val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
         if (mAuth?.currentUser != null && currentUser != null) {
             currentUser!!.active = true
             FirestoreUtil.updateUser(currentUser!!) {}
         }
 
-        Log.d("Yeeey", "App in foreground")
+        Log.d("fg", "App in foreground")
     }
 
     override fun attachBaseContext(context: Context) {
@@ -56,16 +56,6 @@ class ArchLifecycleApp : Application(), LifecycleObserver {
         super.onCreate()
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
         FirebaseDatabase.getInstance().setPersistenceEnabled(true)
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    fun onAppBackgrounded() {
-        Log.d("Awww", "App in background")
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun onAppForegrounded() {
-        Log.d("Yeeey", "App in foreground")
     }
 
 }

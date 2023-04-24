@@ -111,26 +111,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnLogin" />
 
-            <!-- !Disabled¡ Facebook Login Button -->
-            <!--
-            <com.facebook.login.widget.LoginButton
-                android:id="@+id/btLoginFacebook"
-                style="@style/FacebookLoginButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp"
-                android:paddingRight="20dp"
-                android:paddingBottom="10dp"
-                app:com_facebook_login_text="@string/facebookLogin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvOr" />
-            -->
-
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/signInButton"
                 android:layout_width="0dp"

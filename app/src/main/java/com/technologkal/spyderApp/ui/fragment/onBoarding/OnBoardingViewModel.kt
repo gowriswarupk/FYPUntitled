@@ -14,7 +14,8 @@ class OnBoardingViewModel(application: Application) : AndroidViewModel(applicati
         SlideContent(
             ContextCompat.getDrawable(application.applicationContext, R.drawable.spyder_logo)!!,
             "Spyder - Raspberry Pi",
-            "Make sure to install the Spyder application on your Raspberry Pi!"
+            "Make sure to install the Spyder application on your Raspberry Pi!" +
+                    "\n check out the GitHub Repo: github.com/gowriswarupk/spyder-rpi"
         ),
         SlideContent(
             ContextCompat.getDrawable(application.applicationContext, R.drawable.ic_github)!!,
@@ -32,7 +33,7 @@ class OnBoardingViewModel(application: Application) : AndroidViewModel(applicati
             "Keep your private network safe and your devices accounted for!"
         ),
         SlideContent(
-            ContextCompat.getDrawable(application.applicationContext, R.drawable.ic_startrocket)!!,
+            ContextCompat.getDrawable(application.applicationContext, R.drawable.ic_complete)!!,
             "Ready? Let's begin!",
             " "
         )

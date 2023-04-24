@@ -4,35 +4,32 @@ Name: Gowriswarup Kailas Perumal
 
 20087165
 
-## Overview.
+## Overview
 
 A mobile app (Kotlin) which works as a user interface for the Spyder project for carrying out tasks on the Raspberry Pi component and notifying user.
 
-Please checkout the component Spyder-rpi repo [here](https://github.com/gowriswarupk/spyder-rpi) for the complete project file.
+Please checkout the component [Spyder-rpi repo here](https://github.com/gowriswarupk/spyder-rpi) for the complete project file.
 
 
-### Features.
-[ A bullet-point list of the __new features__ implemented on the Kotlin Project (and any modifications to existing features) .]
+### Features:
 
-----TEMP Line---
+- [x]  Walkthrough Onboarding Flow
+- [x]  Login, Registration & Welcome Screens
+- [x]  Firebase Auth integration
+- [x]  Firebase DB integration
+- [x]  Firebase Cloud Messaging integration
+- [x]  Firebase Auth integration
+- [x]  Navigation Drawer
+- [x]  Home Screen
+- [x]  Login with Google
+- [x]  Save Password
+- [x]  Logout
 
-Features required:
-
-- [ ]  Task 1
-- [ ]  Task 2
-- [ ]  Task 3
-- [ ]  Task 4
-- [ ]  Task 5
 
 Error Handling and notifications for Cloud Storage as well as error messages, along with CRUD Functionalities.
 
-##
-* Download google-service.json from your Firebase Console
-* Place google-service.json file in the app/ folder
-* Build & Run the app in Android Studio
+## Setup requirements:
 
-
-## Setup requirements.
 To run the app locally, clone the repo thus:
 
 ```
@@ -55,9 +52,11 @@ Realtime Database config: https://firebase.google.com/docs/database/android/star
 
 Google Auth : https://firebase.google.com/docs/auth/android/google-signin?hl=en&authuser=0
 
-### Component catalogue.
 
-[ Insert a screenshot from the UI that lists all the different placemarks and categories if required.]
+* Download google-service.json from your Firebase Console
+* Place google-service.json file in the app/ folder
+* Build & Run the app in Android Studio
+
 
 ### UI Design.
 
@@ -78,14 +77,30 @@ Google Auth : https://firebase.google.com/docs/auth/android/google-signin?hl=en&
 <img width="200" alt="icon" src="https://user-images.githubusercontent.com/58232821/233780996-6d0abe5c-9b7b-46ea-94be-9588e2f43341.png">
 --- Logo Design using Name.com Student pack
 
-### Icons provided by icons8.com
-<a target="_blank" href="https://icons8.com/icon/Tn1voGNhzHsN/raspberry-pi-zero">Raspberry Pi Zero</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-<a target="_blank" href="https://icons8.com/icon/62856/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-<a target="_blank" href="https://icons8.com/icon/rl0sIZNchpNB/cyber-security">Cyber Security</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-<a target="_blank" href="https://icons8.com/icon/112272/stellar">Stellar</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 
-<a target="_blank" href="https://icons8.com/icon/YYSGl-eTrZm8/cloud-firewall">Cloud Firewall</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+<br>
+
+## Attributions
+<br>
+
+Instakotlin open-source template
+
+Icons provided by icons8.com:   
+    <a target="_blank" href="https://icons8.com/icon/Tn1voGNhzHsN/raspberry-pi-zero">Raspberry Pi Zero</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>  
+    <a target="_blank" href="https://icons8.com/icon/62856/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>   
+    <a target="_blank" href="https://icons8.com/icon/rl0sIZNchpNB/cyber-security">Cyber Security</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>    
+    <a target="_blank" href="https://icons8.com/icon/112272/stellar">Stellar</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>    
+    <a target="_blank" href="https://icons8.com/icon/YYSGl-eTrZm8/cloud-firewall">Cloud Firewall</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    <a target="_blank" href="https://icons8.com/icon/528elqVNqOrX/approved-delivery">Approved Delivery</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<br>
+
+## Troubleshooting
+
+* __Firebase Auth Permissions__ - When configuring the Firebase console to assist with Authentication, if any errors arise, it will be displayed to the user at the Log-in page.    
+Most likely causes for this error might be related to improper SHAsum implementations while creating the google-services.json file. Ensure that this is the same as the app gradle signingReport output in the Android Studio IDE while modifying the application.  
+Additional errors might be due to improper configuration within the Authentication (Sign-in method) and Cloud Firestore pages within the Firebase console. 
+
+* __Firebase Access Controls__ - If the user-specific permission set is enabled, ensure that the rules are modified accordingly to avoid auth issues. 
+

@@ -3,14 +3,10 @@
     <string name="continue_string">Continue</string>
 
 
-    <string name="stay_in_touch">Use this starter kit to build your Android app faster.</string>
+    <string name="auth_desc">Use this Android application to control your Spyder-RPi components easily!.</string>
     <string name="log_in">Log In</string>
     <string name="sign_up">Sign Up</string>
-    <string name="welcome_to_messenger">Kotlin Starter Kit with Firebase</string>
-
-<!--    <string name="facebookLogin">Facebook Login</string>-->
-<!--    <string name="facebook_app_id">686078505161575</string>-->
-<!--    <string name="fb_login_protocol_scheme">fb686078505161575</string>-->
+    <string name="auth_welcome">SpyderApp Android Application</string>
 
     <string name="fullName">Full Name</string>
     <string name="email">E-mail</string>

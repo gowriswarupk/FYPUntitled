@@ -6,13 +6,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-//import com.facebook.GraphRequest
-//import com.facebook.login.LoginResult
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.common.api.ApiException
-//import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
@@ -101,7 +98,6 @@ class LoginViewModel : ViewModel() {
             userInfo.userName = items["userName"].toString()
             userInfo.profilePictureURL = items["profilePictureURL"].toString()
             userInfo.active = true
-//            userInfo.fcmToken = items["fcmToken"].toString()
             MyApplication.currentUser = userInfo
 
             onFinishLoading()

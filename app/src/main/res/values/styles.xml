@@ -9,16 +9,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="FacebookLoginButton">
-        <item name="android:textSize">21.5sp</item>
-        <item name="android:background">@drawable/ic_blue_button</item>
-        <!--        <item name="android:backgroundTint">@color/colorPrimary</item>-->
-        <item name="android:textColor">@color/mainBgColor</item>
-        <item name="android:textAllCaps">false</item>
-    </style>
-
     <style name="AppTheme.Launcher">
-        <!--TODO: insert your own splash here-->
         <item name="android:windowBackground">@drawable/launch_screen</item>
         <!-- Optional, on Android 5+ you can modify the colorPrimaryDark color to match the windowBackground color for further branding-->
         <item name="colorPrimaryDark">@android:color/white</item>

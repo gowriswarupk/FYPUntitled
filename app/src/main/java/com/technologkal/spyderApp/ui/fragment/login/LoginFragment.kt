@@ -20,14 +20,12 @@ import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.databinding.F
 
 class LoginFragment : Fragment() {
     private val rCSignIn = 1
-//    private lateinit var mCallbackManager: CallbackManager
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-//        mCallbackManager = CallbackManager.Factory.create()
+    ): View {
         viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         binding.loginViewModel = viewModel
@@ -35,23 +33,6 @@ class LoginFragment : Fragment() {
 
         setupListeners()
         setUpObservers()
-
-//        binding.btLoginFacebook.setPermissions("email")
-//        binding.btLoginFacebook.registerCallback(mCallbackManager,
-//            object : FacebookCallback<LoginResult> {
-//                override fun onSuccess(result: LoginResult) {
-//                    viewModel.handleFacebookToken(result)
-//                }
-//
-//                override fun onCancel() {
-//                    viewModel.onFinishLoading()
-//                }
-//
-//                override fun onError(error: FacebookException?) {
-//                    viewModel.onFinishLoading()
-//                    viewModel.setError(error?.message!!)
-//                }
-//            })
 
         return binding.root
     }

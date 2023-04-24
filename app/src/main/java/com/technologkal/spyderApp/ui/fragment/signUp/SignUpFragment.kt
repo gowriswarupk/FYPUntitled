@@ -33,7 +33,7 @@ class SignUpFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         binding.signUpViewModel = viewModel

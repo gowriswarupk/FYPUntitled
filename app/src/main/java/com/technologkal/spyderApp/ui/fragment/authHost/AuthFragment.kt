@@ -17,7 +17,7 @@ class AuthFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewModel = ViewModelProvider(this).get(AuthViewModel::class.java)
         binding = FragmentAuthBinding.inflate(inflater, container, false)
         binding.authViewModel = viewModel

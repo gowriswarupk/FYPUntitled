@@ -24,7 +24,7 @@ class OnBoarding : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         viewModel = ViewModelProvider(this).get(OnBoardingViewModel::class.java)
         binding = FragmentOnBoardingBinding.inflate(inflater, container, false)
         binding.onBoardingViewModel = viewModel

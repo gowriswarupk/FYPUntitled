@@ -106,6 +106,7 @@ class HostActivity : AppCompatActivity() {
             graph.setStartDestination(R.id.onBoarding)
 
         }
+
         navController.graph = graph
 
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
