@@ -62,15 +62,16 @@ Google Auth : https://firebase.google.com/docs/auth/android/google-signin?hl=en&
 
 #### Onboarding Pages
 
-<img width="315" alt="Onboarding1" src="https://user-images.githubusercontent.com/58232821/233780860-e8b0817f-e3de-444d-97c5-702cf30d7a40.png"><img width="336" alt="Onboarding2" src="https://user-images.githubusercontent.com/58232821/233780859-7a76bc07-cc7d-4c01-9408-aa36bb0df18e.png"><img width="332" alt="Onboarding3" src="https://user-images.githubusercontent.com/58232821/233780858-d990d438-0552-4ba7-aeb8-6dbaac4da15e.png"><img width="335" alt="Onboarding4" src="https://user-images.githubusercontent.com/58232821/233780857-8648a2fe-806a-4b60-a327-d93637c92fe9.png"><img width="335" alt="Onboarding5" src="https://user-images.githubusercontent.com/58232821/233780856-bf94e643-9762-493a-a983-a38e088bc7a2.png">
+<img width="315" alt="Onboarding1" src="https://user-images.githubusercontent.com/58232821/233893968-97e14444-ccff-4ef2-863a-0dbb78cade73.png"><img width="336" alt="Onboarding2" src="https://user-images.githubusercontent.com/58232821/233893969-00b0da5a-af06-4bcc-91ed-624b6e49ee1c.png"><img width="332" alt="Onboarding3" src="https://user-images.githubusercontent.com/58232821/233893971-63d3c74c-cca7-4bb3-b011-06d678d262c8.png"><img width="335" alt="Onboarding4" src="https://user-images.githubusercontent.com/58232821/233893972-6428b8fa-fc4c-488e-bd7c-cb37b9186226.png"><img width="335" alt="Onboarding5" src="https://user-images.githubusercontent.com/58232821/233893973-ffe6a8bd-3366-4213-af91-0b054149d0c7.png">
 
 #### Auth, Login, Signup Pages
 
-<img width="335" alt="AuthPage" src="https://user-images.githubusercontent.com/58232821/233877148-9a2f6829-0749-485a-9712-69e1ab54c325.png"><img width="335" alt="Login" src="https://user-images.githubusercontent.com/58232821/233780895-01fd4636-5ad1-45bd-a77b-f79766cc839f.png"><img width="335" alt="SignUp" src="https://user-images.githubusercontent.com/58232821/233780896-3a28b7dc-ce9a-4c19-84af-8e7afbc3df3b.png">
+<img width="335" alt="AuthPage" src="https://user-images.githubusercontent.com/58232821/233894133-f9f30b42-987f-4bd4-854b-facb75df7181.png"><img width="335" alt="Login" src="https://user-images.githubusercontent.com/58232821/233894134-28e9622e-baea-40a1-bcf4-ca05cd8bd503.png"><img width="335" alt="SignUp" src="https://user-images.githubusercontent.com/58232821/233894137-1a45a94e-8d76-4e97-9279-7534e4a41c09.png"><img width="335" alt="google-auth-login" src="https://user-images.githubusercontent.com/58232821/233894335-e43b721d-0230-4a57-8517-2b8a012f8040.png">
+
 
 #### Home Page
 
-<img width="335" alt="homepage" src="https://user-images.githubusercontent.com/58232821/233780932-65504ad3-7835-4de7-9cf2-a575d8d93b82.png">
+<img width="335" alt="homepage" src="https://user-images.githubusercontent.com/58232821/233894226-fb5ee97e-561e-4bcc-a46e-516961d4e560.png"><img width="335" alt="app-drawer" src="https://user-images.githubusercontent.com/58232821/233894225-8619e65b-a2c9-43b3-951a-9de12e918bf9.png">
 
 
 ### Logo/ App icon
