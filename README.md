@@ -73,7 +73,11 @@ Google Auth : https://firebase.google.com/docs/auth/android/google-signin?hl=en&
 
 #### Home Page
 
-<img width="335" alt="homepage" src="https://user-images.githubusercontent.com/58232821/233894226-fb5ee97e-561e-4bcc-a46e-516961d4e560.png">&nbsp; &nbsp; &nbsp; <img width="335" alt="app-drawer" src="https://user-images.githubusercontent.com/58232821/233894225-8619e65b-a2c9-43b3-951a-9de12e918bf9.png">
+<img width="335" alt="homepage" src="https://user-images.githubusercontent.com/58232821/234177350-212f2df1-cab5-417b-b6ea-bee4257ce298.png">&nbsp; &nbsp; &nbsp; <img width="335" alt="app-drawer" src="https://user-images.githubusercontent.com/58232821/233894225-8619e65b-a2c9-43b3-951a-9de12e918bf9.png">
+
+#### Built-in Network Tools
+
+<img width="335" alt="networkmonitorconsole" src="https://user-images.githubusercontent.com/58232821/234178332-08d3e169-93fa-403c-b1f7-dc116f4aee7f.png">&nbsp; &nbsp; &nbsp; <img width="335" alt="speedtestpage" src="https://user-images.githubusercontent.com/58232821/234178338-ae787aed-0117-46bb-a6bc-bb15e94ee4d1.png">
 
 
 ### Logo/ App icon
