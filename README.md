@@ -21,6 +21,8 @@ Please checkout the component [Spyder-rpi repo here](https://github.com/gowriswa
 - [x]  Firebase Auth integration
 - [x]  Navigation Drawer
 - [x]  Home Screen
+- [x]  Network Monitoring Overview Screen
+- [x]  Network Speedtest - Test servers included
 - [x]  Login with Google
 - [x]  Save Password
 - [x]  Logout
