@@ -17,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.auth.api.signin.GoogleSignInOptionsExtension
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -32,6 +33,7 @@ import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.R
 import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.databinding.DrawerHeaderLayoutBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
+import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.databinding.FragmentHomeBinding
 
 
 class HostActivity : AppCompatActivity() {
@@ -44,6 +46,8 @@ class HostActivity : AppCompatActivity() {
     private lateinit var navView: NavigationView
     private lateinit var navViewBinding: DrawerHeaderLayoutBinding
     private lateinit var database: DatabaseReference
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.AppTheme)
@@ -58,6 +62,8 @@ class HostActivity : AppCompatActivity() {
             .requestEmail()
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+
 
         drawerLayout = findViewById(R.id.drawer_layout)
         navViewBinding = DrawerHeaderLayoutBinding.inflate(layoutInflater, findViewById(R.id.navView), true)
@@ -100,7 +106,7 @@ class HostActivity : AppCompatActivity() {
                 graph.setStartDestination(R.id.authFragment)
             } else {
                 getUserData()
-                graph.setStartDestination(R.id.scriptsFragment)
+                graph.setStartDestination(R.id.homeFragment)
             }
         } else {
             graph.setStartDestination(R.id.onBoarding)
@@ -206,6 +212,16 @@ class HostActivity : AppCompatActivity() {
                 Log.w(TAG, "toggleDatabaseValue:onCancelled", databaseError.toException())
             }
         })
+    }
+
+    fun onButton7Click(view: View?) {
+        showToast("Switching to Speed Test page!")
+        navController.navigate(R.id.action_homeFragment_to_networkSpeedTestFragment)
+    }
+
+    fun onButton8Click(view: View?) {
+        showToast("Switching to Network Monitoring page!")
+        navController.navigate(R.id.action_homeFragment_to_networkMonitorConsoleFragment)
     }
 
 }

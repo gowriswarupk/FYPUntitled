@@ -88,6 +88,8 @@ Google Auth : https://firebase.google.com/docs/auth/android/google-signin?hl=en&
 
 Instakotlin open-source template
 
+[bertrandmartel/speed-test-lib | JSpeedTest | MIT License](https://github.com/bertrandmartel/speed-test-lib/blob/master/LICENSE.md)
+
 Icons provided by icons8.com:   
     <a target="_blank" href="https://icons8.com/icon/Tn1voGNhzHsN/raspberry-pi-zero">Raspberry Pi Zero</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>  
     <a target="_blank" href="https://icons8.com/icon/62856/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>   
