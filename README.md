@@ -15,13 +15,15 @@ Please checkout the component [Spyder-rpi repo here](https://github.com/gowriswa
 
 - [x]  Walkthrough Onboarding Flow
 - [x]  Login, Registration & Welcome Screens
+- [x]  Login with Google
 - [x]  Firebase Auth integration
 - [x]  Firebase DB integration
 - [x]  Firebase Cloud Messaging integration
 - [x]  Firebase Auth integration
 - [x]  Navigation Drawer
 - [x]  Home Screen
-- [x]  Login with Google
+- [x]  Network Speed Test (Built-in + WebView)
+- [x]  Network Monitoring Console 
 - [x]  Save Password
 - [x]  Logout
 
@@ -71,7 +73,13 @@ Google Auth : https://firebase.google.com/docs/auth/android/google-signin?hl=en&
 
 #### Home Page
 
-<img width="335" alt="homepage" src="https://user-images.githubusercontent.com/58232821/233894226-fb5ee97e-561e-4bcc-a46e-516961d4e560.png">&nbsp; &nbsp; &nbsp; <img width="335" alt="app-drawer" src="https://user-images.githubusercontent.com/58232821/233894225-8619e65b-a2c9-43b3-951a-9de12e918bf9.png">
+<img width="335" alt="homepage" src="https://user-images.githubusercontent.com/58232821/234184990-50eec471-8023-4406-96a8-ab8bf79fa9a6.png">&nbsp; &nbsp; &nbsp; <img width="335" alt="app-drawer" src="https://user-images.githubusercontent.com/58232821/233894225-8619e65b-a2c9-43b3-951a-9de12e918bf9.png">
+
+
+#### Home Page
+
+<img width="335" alt="networkmonitorconsole" src="https://user-images.githubusercontent.com/58232821/234185071-b89735b0-4195-4d80-9ab5-602ba9c48d9e.png">&nbsp; &nbsp; &nbsp; <img width="335" alt="speedtestpage" src="https://user-images.githubusercontent.com/58232821/234185077-cbf8906e-f379-48d3-97a1-b3d73d075023.png">
+
 
 
 ### Logo/ App icon
