@@ -59,14 +59,6 @@ class NetworkSpeedTestFragment : Fragment() {
                 progressBar.visibility = View.GONE
             }
         }
-        webView.settings.javaScriptEnabled = true
-        webView.webViewClient = object : WebViewClient() {
-            override fun onPageFinished(view: WebView?, url: String?) {
-                super.onPageFinished(view, url)
-                // Hide the progress bar when the page finishes loading
-                progressBar.visibility = View.GONE
-            }
-        }
         val htmlContent = """
         <html>
             <body>
