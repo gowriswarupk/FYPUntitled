@@ -1,18 +1,20 @@
 package com.technologkal.spyderApp.ui.fragment.networkTools
 
 import android.content.ContentValues.TAG
+import android.os.AsyncTask
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.R
 
-import android.os.AsyncTask
-import android.util.Log
 import fr.bmartel.speedtest.SpeedTestReport
 import fr.bmartel.speedtest.SpeedTestSocket
 import fr.bmartel.speedtest.inter.ISpeedTestListener
@@ -24,6 +26,7 @@ class NetworkSpeedTestFragment : Fragment() {
     private lateinit var tvSpeed: TextView
     private lateinit var btnStart: Button
     private lateinit var progressBar: ProgressBar
+    private lateinit var webView: WebView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,17 +42,54 @@ class NetworkSpeedTestFragment : Fragment() {
         tvSpeed = view.findViewById(R.id.tv_speed)
         btnStart = view.findViewById(R.id.btn_start)
         progressBar = view.findViewById(R.id.progressBar)
+        webView = view.findViewById(R.id.webview)
 
         btnStart.setOnClickListener {
             it.isEnabled = false
             tvStatus.text = "Status: Testing..."
             SpeedTestTask().execute()
         }
+
+
+        webView.settings.javaScriptEnabled = true
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                // Hide the progress bar when the page finishes loading
+                progressBar.visibility = View.GONE
+            }
+        }
+        webView.settings.javaScriptEnabled = true
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                // Hide the progress bar when the page finishes loading
+                progressBar.visibility = View.GONE
+            }
+        }
+        val htmlContent = """
+        <html>
+            <body>
+                <!--OST Widget code start-->
+                    <div style="text-align:right;">
+                        <div style="min-height:360px;">
+                            <div style="width:100%;height:0;padding-bottom:50%;position:relative;">
+                                <iframe style="border:none;position:absolute;top:0;left:0;width:100%;height:100%;min-height:360px;border:none;overflow:hidden !important;" src="https://openspeedtest.com/speedtest?Run=2">
+                                </iframe>
+                            </div>
+                        </div>Provided by <a href="https://openspeedtest.com">OpenSpeedtest.com</a>
+                    </div>
+                <!-- OST Widget code end -->
+            </body>
+        </html>
+        """
+
+        webView.loadData(htmlContent, "text/html", "UTF-8")
     }
 
     inner class SpeedTestTask : AsyncTask<Void, String, String>() {
 
-        //Redundency applied to iterate through multiple test servers:
+        //Redundancy applied to iterate through multiple test servers:
         private val testServerUrls = listOf(
             "http://ipv4.ikoula.testdebit.info/1M.iso",
             "http://speedtest.ftp.otenet.gr/files/test1Mb.db",
@@ -118,3 +158,4 @@ class NetworkSpeedTestFragment : Fragment() {
         }
     }
 }
+

@@ -34,5 +34,7 @@
     <string name="speed_test_start">Speed Test is starting!</string>
 
     <string name="launch_network_monitor">Launch Console</string>
+    <string name="openspeedtest">Embedded openspeedtest.com Speed Test</string>
+    <string name="inbuiltspeedtest">Or, Try our built-in Speed Test option below:</string>
 
 </resources>

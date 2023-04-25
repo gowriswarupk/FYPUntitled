@@ -4,44 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="16dp"
+    android:padding="6dp"
     tools:context="com.technologkal.spyderApp.ui.fragment.networkTools.NetworkSpeedTestFragment">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/openspeedtest"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textSize="15sp" />
+
+    <WebView
+        android:layout_marginTop="8sp"
+        android:id="@+id/webview"
+        android:layout_width="318dp"
+        android:layout_height="436dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="16sp"
+        android:text="@string/inbuiltspeedtest"
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textSize="15sp" />
+
+
+    <TextView
         android:id="@+id/tv_status"
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Status: Idle"
-        android:textAppearance="?attr/textAppearanceHeadline5" />
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textSize="15sp" />
+
 
     <TextView
         android:id="@+id/tv_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:text="Speed: 0 Mbps"
-        android:textAppearance="?attr/textAppearanceHeadline5" />
+        android:textAppearance="?attr/textAppearanceHeadline5"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="Start Test" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_marginTop="16dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="190dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="10dp"
         android:indeterminate="false"
         android:max="100"
+        android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSpeed"
+        app:layout_constraintTop_toBottomOf="@+id/tv_speed"
         app:layout_constraintVertical_bias="0.1" />
 
 </LinearLayout>
