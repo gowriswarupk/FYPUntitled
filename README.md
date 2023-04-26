@@ -98,6 +98,8 @@ Instakotlin open-source template
 
 Cacti Network monitoring tool 
 
+OpenCanary / Cowrie honeypot integration.
+
 [bertrandmartel/speed-test-lib | JSpeedTest | MIT License](https://github.com/bertrandmartel/speed-test-lib/blob/master/LICENSE.md)
 
 [SpeedTest by OpenSpeedTest™ - Free and Open-Source HTML5 Network Speed Test Software](https://openspeedtest.com/)

@@ -1,26 +1,22 @@
 package com.technologkal.spyderApp.ui.activity.networkTools
 
-import android.content.ContentValues.TAG
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.R
-
 import fr.bmartel.speedtest.SpeedTestReport
 import fr.bmartel.speedtest.SpeedTestSocket
 import fr.bmartel.speedtest.inter.ISpeedTestListener
 import fr.bmartel.speedtest.model.SpeedTestError
 
-class NetworkSpeedTestFragment : Fragment() {
+class NetworkSpeedTestActivity : AppCompatActivity() {
 
     private lateinit var tvStatus: TextView
     private lateinit var tvSpeed: TextView
@@ -28,21 +24,14 @@ class NetworkSpeedTestFragment : Fragment() {
     private lateinit var progressBar: ProgressBar
     private lateinit var webView: WebView
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_network_speed_test, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        tvStatus = view.findViewById(R.id.tv_status)
-        tvSpeed = view.findViewById(R.id.tv_speed)
-        btnStart = view.findViewById(R.id.btn_start)
-        progressBar = view.findViewById(R.id.progressBar)
-        webView = view.findViewById(R.id.webview)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_network_speed_test)
+        tvStatus = findViewById(R.id.tv_status)
+        tvSpeed = findViewById(R.id.tv_speed)
+        btnStart = findViewById(R.id.btn_start)
+        progressBar = findViewById(R.id.progressBar)
+        webView = findViewById(R.id.webview)
 
         btnStart.setOnClickListener {
             it.isEnabled = false
@@ -88,66 +77,50 @@ class NetworkSpeedTestFragment : Fragment() {
             "http://speedtest.tele2.net/100MB.zip",
             "http://speedtest.mytelecoms.net/files/100Mb.dat",
             "http://speedtest.ftp.otenet.gr/files/test100k.db",
-            "http://speedtest.ftp.otenet.gr/files/test500k.db",
-            "http://speedtest.ftp.otenet.gr/files/test1000k.db",
-            "http://speedtest.blizoo.mk/speedtest/upload.php",
-            "http://ookla1.exetel.com.au/100MB.test",
-            "http://ookla2.exetel.com.au/100MB.test",
-            "http://mirror.internode.on.net/pub/test/100meg.test",
-            "http://speedtest.dal01.softlayer.com/downloads/test100.zip"
+            "http://speedtest.ftp.otenet.gr/files/test10Mb.db"
         )
 
-
-        override fun doInBackground(vararg params: Void?): String? {
-            val speedTestSocket = SpeedTestSocket()
-
-            speedTestSocket.addSpeedTestListener(object : ISpeedTestListener {
-                override fun onCompletion(report: SpeedTestReport) {
-                    publishProgress(
-                        "Status: Completed",
-                        "%.2f Mbps".format(report.transferRateBit.toDouble() / 1_000_000),
-                        "100"
-                    )
-                }
-
-                override fun onError(speedTestError: SpeedTestError, errorMessage: String) {
-                    publishProgress("Status: Error", "Speed: 0 Mbps", "0")
-                }
-
-                override fun onProgress(percent: Float, report: SpeedTestReport) {
-                    publishProgress(
-                        "Status: Testing...",
-                        "%.2f Mbps".format(report.transferRateBit.toDouble() / 1_000_000),
-                        percent.toString()
-                    )
-                }
-            })
+        override fun doInBackground(vararg params: Void?): String {
+            var speed = ""
 
             for (url in testServerUrls) {
-                try {
-                    speedTestSocket.startDownload(url)
-                    break
-                } catch (e: Exception) {
-                    Log.e(TAG, "Error downloading from $url", e)
-                }
+                val speedTestSocket = SpeedTestSocket()
+                speedTestSocket.addSpeedTestListener(object : ISpeedTestListener {
+                    override fun onCompletion(report: SpeedTestReport?) {
+                        report?.transferRateBit?.let {
+                            // Calculate speed in Mbps
+                            val speedMbps = it.toDouble() / 1000000
+                            speed = String.format("%.2f Mbps", speedMbps)
+                            Log.d("SpeedTest", "Speed: $speed")
+                            publishProgress(speed)
+                        }
+                    }
+
+                    override fun onError(speedTestError: SpeedTestError?, errorMessage: String?) {
+                        Log.e("SpeedTest", "Error: $errorMessage")
+                    }
+
+                    override fun onProgress(percent: Float, report: SpeedTestReport?) {
+                        Log.d("SpeedTest", "Progress: $percent%")
+                    }
+                })
+
+                speedTestSocket.startFixedDownload(url, 10000) // Download 10MB file
             }
-            return null
+
+            return speed
         }
 
         override fun onProgressUpdate(vararg values: String?) {
             super.onProgressUpdate(*values)
-            tvStatus.text = values[0]
-            tvSpeed.text = values[1]
-
-            // Update the ProgressBar
-            val progress = (values[2]?.toFloat() ?: 0f) * 100
-            progressBar.progress = progress.toInt()
+            tvStatus.text = "Status: Done"
+            tvSpeed.text = values[0]
+            btnStart.isEnabled = true
         }
 
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
-            btnStart.isEnabled = true
+            // Do something with the result if needed
         }
     }
 }
-

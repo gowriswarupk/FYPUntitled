@@ -168,11 +168,19 @@ class HostActivity : AppCompatActivity() {
     fun onButton1Click(view: View?) {
         showToast("Running Device Scans...")
         toggleDatabaseValue("button1")
+        val message = mapOf(
+            "data" to mapOf("scriptName" to "script1.sh")
+        )
+//        FirebaseMessaging.getInstance().sendAsync(message)
     }
 
     fun onButton2Click(view: View?) {
         showToast("Running Port Scans...")
         toggleDatabaseValue("button2")
+        val message = mapOf(
+            "data" to mapOf("scriptName" to "script2.sh")
+        )
+//        FirebaseMessaging.getInstance().sendAsync(message)
     }
 
     fun onButton3Click(view: View?) {
@@ -183,6 +191,10 @@ class HostActivity : AppCompatActivity() {
     fun onButton4Click(view: View?) {
         showToast("Honeypot Status Changed!")
         toggleDatabaseValue("button4")
+        val message = mapOf(
+            "data" to mapOf("scriptName" to "script4.sh")
+        )
+//        FirebaseMessaging.getInstance().sendAsync(message)
     }
 
     fun onButton5Click(view: View?) {

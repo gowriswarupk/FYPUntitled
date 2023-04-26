@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="6dp"
-    tools:context="com.technologkal.spyderApp.ui.activity.networkTools.NetworkSpeedTestFragment">
+    tools:context="com.technologkal.spyderApp.ui.activity.networkTools.NetworkSpeedTestActivity">
 
     <TextView
         android:layout_width="wrap_content"
