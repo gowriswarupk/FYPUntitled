@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="6dp"
-    tools:context="com.technologkal.spyderApp.ui.fragment.networkTools.NetworkSpeedTestFragment">
+    tools:context="com.technologkal.spyderApp.ui.activity.networkTools.NetworkSpeedTestFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@drawable/btn_background"
         android:text="Start Test" />
 
     <ProgressBar

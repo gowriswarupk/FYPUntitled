@@ -1,4 +1,4 @@
-package com.technologkal.spyderApp.ui.fragment.networkTools
+package com.technologkal.spyderApp.ui.activity.networkTools
 
 import android.content.ContentValues.TAG
 import android.os.AsyncTask
@@ -33,7 +33,7 @@ class NetworkSpeedTestFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_network_speed_test, container, false)
+        return inflater.inflate(R.layout.activity_network_speed_test, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

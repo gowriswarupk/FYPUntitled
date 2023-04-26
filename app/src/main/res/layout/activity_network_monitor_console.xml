@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="12dp"
-    tools:context="com.technologkal.spyderApp.ui.fragment.networkTools.NetworkMonitorConsoleFragment">
+    tools:context="com.technologkal.spyderApp.ui.activity.networkTools.NetworkMonitorConsoleFragment">
 
     <TextView
         android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package com.technologkal.spyderApp.ui.fragment.networkTools
+package com.technologkal.spyderApp.ui.activity.networkTools
 
 import android.content.Intent
 import android.net.Uri
@@ -12,11 +12,11 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.R
-import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.databinding.FragmentNetworkMonitorConsoleBinding
+import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.databinding.ActivityNetworkMonitorConsoleBinding
 
 class NetworkMonitorConsoleFragment : Fragment() {
 
-    private var _binding: FragmentNetworkMonitorConsoleBinding? = null
+    private var _binding: ActivityNetworkMonitorConsoleBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var webView: WebView
@@ -31,7 +31,7 @@ class NetworkMonitorConsoleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentNetworkMonitorConsoleBinding.inflate(inflater, container, false)
+        _binding = ActivityNetworkMonitorConsoleBinding.inflate(inflater, container, false)
         return binding.root
     }
 

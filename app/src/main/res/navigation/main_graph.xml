@@ -94,13 +94,13 @@
     </fragment>
     <fragment
         android:id="@+id/networkSpeedTestFragment"
-        android:name="com.technologkal.spyderApp.ui.fragment.networkTools.NetworkSpeedTestFragment"
+        android:name="com.technologkal.spyderApp.ui.activity.networkTools.NetworkSpeedTestFragment"
         android:label="Network Speed Test"
-        tools:layout="@layout/fragment_network_speed_test" />
+        tools:layout="@layout/activity_network_speed_test" />
     <fragment
         android:id="@+id/networkMonitorConsoleFragment"
-        android:name="com.technologkal.spyderApp.ui.fragment.networkTools.NetworkMonitorConsoleFragment"
+        android:name="com.technologkal.spyderApp.ui.activity.networkTools.NetworkMonitorConsoleFragment"
         android:label="Network Monitor Console"
-        tools:layout="@layout/fragment_network_monitor_console" />
+        tools:layout="@layout/activity_network_monitor_console" />
 
 </navigation>
