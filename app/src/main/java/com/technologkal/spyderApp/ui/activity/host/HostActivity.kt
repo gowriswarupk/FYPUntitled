@@ -33,7 +33,9 @@ import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.R
 import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.databinding.DrawerHeaderLayoutBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.messaging.RemoteMessage
 import com.technologkal.ui.fragment.onBoarding.walkthroughactivity.databinding.FragmentHomeBinding
+import java.util.UUID
 
 
 class HostActivity : AppCompatActivity() {
@@ -84,6 +86,7 @@ class HostActivity : AppCompatActivity() {
             // Get the FCM registration token.
             val token = task.result
             Log.d(TAG, "FCM registration token: $token")
+            Log.e(TAG, "message sent!")
             // Send the token to your server or use it to send push notifications.
         }
 
@@ -168,21 +171,45 @@ class HostActivity : AppCompatActivity() {
     fun onButton1Click(view: View?) {
         showToast("Running Device Scans...")
         toggleDatabaseValue("button1")
+        val message = RemoteMessage.Builder("306786568191@gcm.googleapis.com")
+            .setMessageId(UUID.randomUUID().toString())
+            .addData("scriptName", "script1.sh")
+            .build()
+
+        FirebaseMessaging.getInstance().send(message)
     }
 
     fun onButton2Click(view: View?) {
         showToast("Running Port Scans...")
         toggleDatabaseValue("button2")
+        val message = RemoteMessage.Builder("306786568191@gcm.googleapis.com")
+            .setMessageId(UUID.randomUUID().toString())
+            .addData("scriptName", "script2.sh")
+            .build()
+
+        FirebaseMessaging.getInstance().send(message)
     }
 
     fun onButton3Click(view: View?) {
         showToast("Running Security Analysis...")
         toggleDatabaseValue("button3")
+        val message = RemoteMessage.Builder("306786568191@gcm.googleapis.com")
+            .setMessageId(UUID.randomUUID().toString())
+            .addData("scriptName", "script3.sh")
+            .build()
+
+        FirebaseMessaging.getInstance().send(message)
     }
 
     fun onButton4Click(view: View?) {
-        showToast("Honeypot Status Changed!")
+        showToast("Honeypot Install started!")
         toggleDatabaseValue("button4")
+        val message = RemoteMessage.Builder("306786568191@gcm.googleapis.com")
+            .setMessageId(UUID.randomUUID().toString())
+            .addData("scriptName", "script4.sh")
+            .build()
+
+        FirebaseMessaging.getInstance().send(message)
     }
 
     fun onButton5Click(view: View?) {
