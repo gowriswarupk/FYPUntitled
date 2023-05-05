@@ -173,7 +173,7 @@ class HostActivity : AppCompatActivity() {
         toggleDatabaseValue("button1")
         val message = RemoteMessage.Builder("306786568191@gcm.googleapis.com")
             .setMessageId(UUID.randomUUID().toString())
-            .addData("scriptName", "script1.sh")
+            .addData("scriptName", "network_device_scan.py")
             .build()
 
         FirebaseMessaging.getInstance().send(message)
@@ -184,7 +184,7 @@ class HostActivity : AppCompatActivity() {
         toggleDatabaseValue("button2")
         val message = RemoteMessage.Builder("306786568191@gcm.googleapis.com")
             .setMessageId(UUID.randomUUID().toString())
-            .addData("scriptName", "script2.sh")
+            .addData("scriptName", "network_ports_scan.py")
             .build()
 
         FirebaseMessaging.getInstance().send(message)
@@ -195,7 +195,7 @@ class HostActivity : AppCompatActivity() {
         toggleDatabaseValue("button3")
         val message = RemoteMessage.Builder("306786568191@gcm.googleapis.com")
             .setMessageId(UUID.randomUUID().toString())
-            .addData("scriptName", "script3.sh")
+            .addData("scriptName", "network_vulnerability_scan.py")
             .build()
 
         FirebaseMessaging.getInstance().send(message)
@@ -206,7 +206,7 @@ class HostActivity : AppCompatActivity() {
         toggleDatabaseValue("button4")
         val message = RemoteMessage.Builder("306786568191@gcm.googleapis.com")
             .setMessageId(UUID.randomUUID().toString())
-            .addData("scriptName", "script4.sh")
+            .addData("scriptName", "install-cacti.sh")
             .build()
 
         FirebaseMessaging.getInstance().send(message)
